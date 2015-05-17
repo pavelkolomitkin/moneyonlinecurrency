@@ -1,0 +1,3 @@
+money_online:
+    resource: "@MoneyOnlineBundle/Resources/config/routing.yml"
+    prefix:   /

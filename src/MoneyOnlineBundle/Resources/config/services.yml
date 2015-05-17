@@ -1,0 +1,11 @@
+parameters:
+    currency_rates_source: https://www.onlinedengi.ru/dev/xmltalk.php
+
+services:
+#    money_online.example:
+#        class: MoneyOnlineBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    money_online.currency_rates_provider:
+        class: MoneyOnlineBundle\Service\CurrencyRatesProvider
+        arguments: [%currency_rates_source%]

@@ -1,0 +1,39 @@
+{% extends 'MoneyOnlineBundle::layout.html.twig' %}
+
+{% block body %}
+
+<div class="rates">
+
+    <h3 class="header">Курсы валют</h3>
+    {% if isServiceAvailable %}
+
+        {% if rates|length > 0 %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Код</th>
+                        <th>Название</th>
+                        <th>Курс по отношению к рублю</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for rate in rates %}
+                    <tr>
+                        <td class="code">{{ rate.code }}</td>
+                        <td class="name">{{ rate.name }}</td>
+                        <td class="value">{{ rate.value }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+        {% else %}
+            <p class="alert alert-info">Нет информации</p>
+        {% endif %}
+
+    {% else %}
+        <p class="alert alert-danger">Сервис недоступен</p>
+    {% endif %}
+</div>
+
+{% endblock %}

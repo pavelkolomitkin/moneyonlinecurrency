@@ -1,0 +1,3 @@
+money_online_homepage:
+    path:     /rates
+    defaults: { _controller: MoneyOnlineBundle:CurrencyRate:index }
